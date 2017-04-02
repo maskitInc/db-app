@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "stop":  "pkill --signal SIGINT db-app"
+    "stop": "pkill --signal SIGINT db-app"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -14,6 +14,18 @@
     "express-handlebars": "^3.0.0",
     "mongoose": "^4.4.11",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "bootstrap": "3.3.7",
+    "font-awesome": "",
+    "less":"",
+    "less-plugin-clean-css": "",
+    "less-plugin-autoprefix": "",
+    "express-less":"",
+    "grunt": "",
+    "grunt-contrib-uglify": "",
+    "grunt-contrib-watch": "",
+    "grunt-contrib-less": "",
+    "grunt-autoprefixer": "",
+    "jit-grunt": ""
   }
 }
