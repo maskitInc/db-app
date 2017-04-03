@@ -41,8 +41,8 @@ module.exports = function (grunt) {
             //     src: '*.css',
             //     dest: 'public/stylesheets/compressed'
             // }
-            files:{
-                'public/stylesheets/general.css':'public/stylesheets/general.css'
+            files: {
+                'public/stylesheets/general.css': 'public/stylesheets/general.css'
             }
         },
         watch: {

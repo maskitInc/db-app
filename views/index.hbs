@@ -1,154 +1,23 @@
-{{> table}}
+<div class="electricity-payment">
+    <div class="container">
+        <h2>Облік використання та оплати електроенергії членами ТОВ "Блакитна затока"</h2>
 
-<form action="/insert" method="post">
-    <h2>Contact Us</h2>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="clientFirstName">Ім`я</label>
-                <input type="text" class="form-control" placeholder="" id="clientFirstName" name="clientFirstName">
-            </div>
-        </div>
-        <!--  col-md-6   -->
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="clientMiddleName">По батькові</label>
-                <input type="text" class="form-control" placeholder="" id="clientMiddleName" name="clientMiddleName">
-            </div>
-        </div>
-        <!--  col-md-6   -->
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="clientLastName">Прізвище</label>
-                <input type="text" class="form-control" placeholder="" id="clientLastName" name="clientLastName">
-            </div>
-        </div>
+
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Launch demo modal
+        </button>
+
+
+
+        <!--<a href="" class="btn btn-primary open-modal add-company-modal-btn">-->
+            <!--<i class="fa fa-plus" aria-hidden="true"></i>-->
+            <!--<span>add Company</span>-->
+        <!--</a>-->
+
+
+        {{> table}}
+
+
+
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="areaNum">№ діл.</label>
-                <input type="text" class="form-control" placeholder="" id="areaNum" name="areaNum">
-            </div>
-        </div>
-        <!--  col-md-6   -->
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="phoneNum">№ тел.</label>
-                <input type="tel" class="form-control" placeholder="№ тел." id="phoneNum" name="phoneNum">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <!--  col-md-6   -->
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="counterModel">Лічильник (марка, к-сть фаз, тарифів)</label>
-                <input type="text" class="form-control" placeholder="" id="counterModel" name="counterModel">
-            </div>
-        </div>
-        <!--  col-md-6   -->
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="cost">Вартість</label>
-                <input type="text" class="form-control" placeholder="" id="cost" name="cost">
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 col-sm-6">
-            <div class="row">
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="periodRatesFrom">Період, показники (від)</label>
-                        <input type="text" class="form-control" placeholder="" id="periodRatesFrom" name="periodRatesFrom">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="kvFrom">KV</label>
-                        <input type="text" class="form-control" placeholder="" id="kvFrom" name="kvFrom">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="sumFrom">Сума</label>
-                        <input type="text" class="form-control" placeholder="" id="sumFrom" name="sumFrom">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="paidFrom">Оплачено</label>
-                        <input type="text" class="form-control" placeholder="" id="paidFrom" name="paidFrom">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="paymentDateFrom">Дата оплати</label>
-                        <input type="text" class="form-control" placeholder="" id="paymentDateFrom" name="paymentDateFrom">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="debtFrom">Борг</label>
-                        <input type="text" class="form-control" placeholder="" id="debtFrom" name="debtFrom">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <div class="row">
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="periodRatesTo">Період, показники (по)</label>
-                        <input type="text" class="form-control" placeholder="" id="periodRatesTo" name="periodRatesTo">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="kvTo">KV</label>
-                        <input type="text" class="form-control" placeholder="" id="kvTo" name="kvTo">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="sumTo">Сума</label>
-                        <input type="text" class="form-control" placeholder="" id="sumTo" name="sumTo">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="paidTo">Оплачено</label>
-                        <input type="text" class="form-control" placeholder="" id="paidTo" name="paidTo">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="paymentDateTo">Дата оплати</label>
-                        <input type="text" class="form-control" placeholder="" id="paymentDateTo" name="paymentDateTo">
-                    </div>
-                </div>
-                <!--  col-md-6   -->
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="debtTo">Борг</label>
-                        <input type="text" class="form-control" placeholder="" id="debtTo" name="debtTo">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--  row   -->
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>

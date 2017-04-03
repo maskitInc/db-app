@@ -1,155 +1,141 @@
-<div class="electricity-payment">
-    <div class="container">
-        <h2>Облік використання та оплати електроенергії членами ТОВ "Блакитна затока"</h2>
+<div class="resp-table">
+    <table class="resp-table-content">
+        <thead class="resp-table-head">
+            <tr class="resp-table-head-row">
+                <th class="resp-table-head-col col-num">
+                    <span>№ пп</span>
+                </th>
+                <th class="resp-table-head-col col-area-num">
+                    <span>№ діл.</span>
+                </th>
+                <th class="resp-table-head-col col-full-name">
+                    <span>ПІБ</span>
+                </th>
+                <th class="resp-table-head-col col-phone">
+                    <span>Телефон</span>
+                </th>
+                <th class="resp-table-head-col col-counter-model">
+                    <span>Лічильник</span>
+                    <br>
+                    <small>(марка, к-сть фаз, тарифів)</small>
+                </th>
+                <th class="resp-table-head-col col-cost">
+                    <span>Вартість</span>
+                </th>
+                <th class="resp-table-head-col col-period-rates-from">
+                    <span>Період, показники</span>
+                </th>
+                <th class="resp-table-head-col col-kv-from">
+                    <span>KV</span>
+                </th>
+                <th class="resp-table-head-col col-sum-from">
+                    <span>Сума</span>
+                </th>
+                <th class="resp-table-head-col col-paid-from">
+                    <span>Оплачено</span>
+                </th>
+                <th class="resp-table-head-col col-payment-date-from">
+                    <span>Дата оплати</span>
+                </th>
+                <th class="resp-table-head-col col-debt-from">
+                    <span>Борг</span>
+                </th>
+                <th class="resp-table-head-col col-period-rates-to">
+                    <span>Період, показники</span>
+                </th>
+                <th class="resp-table-head-col col-kv-to">
+                    <span>KV</span>
+                </th>
+                <th class="resp-table-head-col col-sum-to">
+                    <span>Сума</span>
+                </th>
+                <th class="resp-table-head-col col-paid-to">
+                    <span>Оплачено</span>
+                </th>
+                <th class="resp-table-head-col col-payment-date-to">
+                    <span>Дата оплати</span>
+                </th>
+                <th class="resp-table-head-col col-debt-to">
+                    <span>Борг</span>
+                </th>
+                <th class="resp-table-head-col col-actions">
+                    <span>Дії</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="resp-table-body">
+            {{# each items }}
+                <tr class="resp-table-body-row" id="{{ this._id }}">
+                    <td class="resp-table-body-col col-num" data-title="№ пп">
+                        <span>{{@key}}</span>
+                    </td>
+                    <td class="resp-table-body-col col-area-num" data-title="№ діл.">
+                        <span>{{ this.areaNum }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-full-name" data-title="ПІБ">
+                        <span>{{ this.clientFirstName }} {{ this.clientMiddleName }} {{ this.clientLastName }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-phone" data-title="№ тел.">
+                        <span>{{ this.phoneNum }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-counter-model" data-title="Лічильник (марка, к-сть фаз, тарифів)">
+                        <span>{{ this.counterModel }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-cost" data-title="Вартість">
+                        <span>{{ this.cost }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-period-rates-from" data-title="Період, показники (від)">
+                        <span>{{ this.periodRatesFrom }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-kv-from" data-title="KV">
+                        <span>{{ this.kvFrom }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-sum-from" data-title="Сума">
+                        <span>{{ this.sumFrom }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-paid-from" data-title="Оплачено">
+                        <span>{{ this.paidFrom }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-payment-date-from" data-title="Дата оплати">
+                        <span>{{ this.paymentDateFrom }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-debt-from" data-title="Борг">
+                        <span>{{ this.debtFrom }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-period-rates-to" data-title="Період, показники (по)">
+                        <span>{{ this.periodRatesTo }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-kv-to" data-title="KV">
+                        <span>{{ this.kvTo }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-sum-to" data-title="Сума">
+                        <span>{{ this.sumTo }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-paid-to" data-title="Оплачено">
+                        <span>{{ this.paidTo }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-payment-date-to" data-title="Дата оплати">
+                        <span>{{ this.paymentDateTo }}</span>
+                    </td>
+                    <td class="resp-table-body-col col-debt-to" data-title="Борг">
+                        <span>{{ this.debtTo }}</span>
+                    </td>
 
-        <a href="" class="btn btn-primary open-modal add-company-modal-btn">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-            <span>add Company</span>
-        </a>
+                    <td class="resp-table-body-col col-actions" data-title="Дії">
+                        <div class="btn-set">
+                            <a href="" class="btn btn-primary open-modal edit-company-modal-btn" title="Edit">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                <span>edit</span>
+                            </a>
+                            <a href="" class="btn btn-default open-modal delete-company-modal-btn" title="Delete">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span>delete</span>
+                            </a>
+                        </div>
+                    </td>
 
-        <div class="resp-table-block">
-            <div class="resp-table">
-                <div class="resp-table-head">
-                    <div class="resp-table-head-row">
-                        <div class="resp-table-head-col col-num">
-                            <span>№ пп</span>
-                        </div>
-                        <div class="resp-table-head-col col-area-num">
-                            <span>№ діл.</span>
-                        </div>
-                        <div class="resp-table-head-col col-full-name">
-                            <span>ПІБ</span>
-                        </div>
-                        <div class="resp-table-head-col col-phone">
-                            <span>№ тел.</span>
-                        </div>
-                        <div class="resp-table-head-col col-counter-model">
-                            <span>Лічильник (марка, к-сть фаз, тарифів)</span>
-                        </div>
-                        <div class="resp-table-head-col col-cost">
-                            <span>Вартість</span>
-                        </div>
-                        <div class="resp-table-head-col col-period-rates-from">
-                            <span>Період, показники</span>
-                        </div>
-                        <div class="resp-table-head-col col-kv-from">
-                            <span>KV</span>
-                        </div>
-                        <div class="resp-table-head-col col-sum-from">
-                            <span>Сума</span>
-                        </div>
-                        <div class="resp-table-head-col col-paid-from">
-                            <span>Оплачено</span>
-                        </div>
-                        <div class="resp-table-head-col col-payment-date-from">
-                            <span>Дата оплати</span>
-                        </div>
-                        <div class="resp-table-head-col col-debt-from">
-                            <span>Борг</span>
-                        </div>
-                        <div class="resp-table-head-col col-period-rates-to">
-                            <span>Період, показники</span>
-                        </div>
-                        <div class="resp-table-head-col col-kv-to">
-                            <span>KV</span>
-                        </div>
-                        <div class="resp-table-head-col col-sum-to">
-                            <span>Сума</span>
-                        </div>
-                        <div class="resp-table-head-col col-paid-to">
-                            <span>Оплачено</span>
-                        </div>
-                        <div class="resp-table-head-col col-payment-date-to">
-                            <span>Дата оплати</span>
-                        </div>
-                        <div class="resp-table-head-col col-debt-to">
-                            <span>Борг</span>
-                        </div>
-                        <div class="resp-table-head-col col-actions">
-                            <span>Дії</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="resp-table-body">
-                {{# each items }}
-                    <div class="resp-table-body-row" id="{{ this._id }}">
-                        <div class="resp-table-body-col col-num" data-title="№ пп">
-                            <span>{{@key}}</span>
-                        </div>
-                        <div class="resp-table-body-col col-area-num" data-title="№ діл.">
-                            <span>{{ this.areaNum }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-full-name" data-title="ПІБ">
-                            <span>{{ this.clientFirstName }} {{ this.clientMiddleName }} {{ this.clientLastName }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-phone" data-title="№ тел.">
-                            <span>{{ this.phoneNum }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-counter-model" data-title="Лічильник (марка, к-сть фаз, тарифів)">
-                            <span>{{ this.counterModel }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-cost" data-title="Вартість">
-                            <span>{{ this.cost }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-period-rates-from" data-title="Період, показники (від)">
-                            <span>{{ this.periodRatesFrom }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-kv-from" data-title="KV">
-                            <span>{{ this.kvFrom }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-sum-from" data-title="Сума">
-                            <span>{{ this.sumFrom }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-paid-from" data-title="Оплачено">
-                            <span>{{ this.paidFrom }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-payment-date-from" data-title="Дата оплати">
-                            <span>{{ this.paymentDateFrom }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-debt-from" data-title="Борг">
-                            <span>{{ this.debtFrom }}</span>
-                        </div>
-                        <div class="col-period-rates-to" data-title="Період, показники (по)">
-                            <span>{{ this.periodRatesTo }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-kv-to" data-title="KV">
-                            <span>{{ this.kvTo }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-sum-to" data-title="Сума">
-                            <span>{{ this.sumTo }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-paid-to" data-title="Оплачено">
-                            <span>{{ this.paidTo }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-payment-date-to" data-title="Дата оплати">
-                            <span>{{ this.paymentDateTo }}</span>
-                        </div>
-                        <div class="resp-table-body-col col-debt-to" data-title="Борг">
-                            <span>{{ this.debtTo }}</span>
-                        </div>
-
-
-                        <div class="resp-table-body-col col-actions" data-title="Дії">
-                            <div class="btn-set">
-                                <a href="" class="btn btn-primary open-modal edit-company-modal-btn" title="Edit">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                                    <span>edit</span>
-                                </a>
-                                <a href="" class="btn btn-default open-modal delete-company-modal-btn" title="Delete">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                    <span>delete</span>
-                                </a>
-                            </div>
-                        </div>
-
-
-                    </div>
-                {{/each}}
-
-                </div>
-            </div>
-        </div>
-
-    </div>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
 </div>
-

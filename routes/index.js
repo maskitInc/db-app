@@ -1,15 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var mongoose = require('mongoose');
 
+var mongoose = require('mongoose');
 mongoose.connect('localhost:27017/test');
 
 var Schema = mongoose.Schema;
 
-var userDataSchema = new Schema(
-    {
+var userDataSchema = new Schema({
         areaNum: String,
-        clientfirstname: String,
+        clientFirstName: String,
         clientMiddleName: String,
         clientLastName: String,
         phoneNum: String,
@@ -29,8 +28,7 @@ var userDataSchema = new Schema(
         debtTo: String
     }, {
         collection: 'user-data'
-    }
-);
+    });
 
 var UserData = mongoose.model('UserData', userDataSchema);
 
@@ -79,7 +77,13 @@ router.post('/insert', function (req, res, next) {
     
     data.save();
     
-    res.redirect('/');
+    // UserData.find()
+    //     .then(function (doc) {
+    //         $('#myModal').modal('hide');
+    //         res.render('index', {items: doc});
+    //     });
+    
+    //res.redirect('/');
 });
 
 router.post('/update', function (req, res, next) {
@@ -93,7 +97,8 @@ router.post('/update', function (req, res, next) {
         doc.content = req.body.content;
         doc.author = req.body.author;
         doc.save();
-    })
+    });
+    
     res.redirect('/');
 });
 
