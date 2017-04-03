@@ -83,7 +83,7 @@ router.post('/insert', function (req, res, next) {
     //         res.render('index', {items: doc});
     //     });
     
-    //res.redirect('/');
+    res.redirect('/');
 });
 
 router.post('/update', function (req, res, next) {
